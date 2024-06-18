@@ -1,5 +1,6 @@
 package com.alosh.security.Entity;
 
+import com.alosh.security.user.User;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.AllArgsConstructor;
@@ -21,17 +22,10 @@ public class Reservation {
     private Date endDate;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "room_id", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "room_id")
     private Room room;
-
-    private boolean isCancelled;
-
-    private boolean isCancellationApproved;
-
-    @OneToOne(mappedBy = "reservation")
-    private Invoice invoice;
 }

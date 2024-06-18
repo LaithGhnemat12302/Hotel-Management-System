@@ -6,32 +6,40 @@ import com.alosh.security.Entity.Employee;
 import com.alosh.security.Services.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/v1/employees")
-@RequiredArgsConstructor
+@RequestMapping("/api/employees")
 public class EmployeeController {
-    private final EmployeeService employeeService;
 
-    @PostMapping("/register")
-    public ResponseEntity<EmployeeResponse> registerEmployee(@Valid @RequestBody Employee employee) {
-        EmployeeResponse savedEmployee = employeeService.registerEmployee(employee);
-        return ResponseEntity.ok(savedEmployee);
-    }
+    @Autowired
+    private EmployeeService employeeService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<EmployeeResponse> getEmployeeProfile(@PathVariable Long id) {
-        Employee employee = employeeService.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
-        return ResponseEntity.ok(new EmployeeResponse(employee.getId(), employee.getName(), employee.getRole()));
+    @PostMapping
+    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+        Employee newEmployee = employeeService.addEmployee(employee);
+        return ResponseEntity.ok(newEmployee);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EmployeeResponse> updateEmployeeProfile(
-            @PathVariable Long id,
-            @Valid @RequestBody UpdateEmployeeRequest request
-    ) {
-        return ResponseEntity.ok(employeeService.updateEmployeeProfile(id, request));
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails) {
+        Employee updatedEmployee = employeeService.updateEmployee(id, employeeDetails);
+        return ResponseEntity.ok(updatedEmployee);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        return ResponseEntity.ok(employee);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Employee>> getAllEmployees() {
+        List<Employee> employees = employeeService.getAllEmployees();
+        return ResponseEntity.ok(employees);
     }
 }

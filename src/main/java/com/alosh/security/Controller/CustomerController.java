@@ -32,12 +32,7 @@ public class CustomerController {
         return ResponseEntity.ok(savedCustomer);
     }
 
-//    @PostMapping("/login")
-//    public ResponseEntity<LoginResponse> loginCustomer(@RequestBody LoginRequest request) {
-//        authenticationService.authenticate(request)
-//
-//        return ResponseEntity.ok(new LoginResponse(jwt, new CustomerResponse(customer.getId(), customer.getName(), customer.getEmail())));
-//    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<CustomerResponse> getCustomerProfile(@PathVariable Long id) {

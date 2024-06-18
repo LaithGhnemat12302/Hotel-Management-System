@@ -10,37 +10,37 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class EmployeeService {
-    private final EmployeeRepository employeeRepository;
-    private final PasswordEncoder passwordEncoder;
 
-    @Transactional
-    public EmployeeResponse registerEmployee(Employee employee) {
-        Employee savedEmployee = employeeRepository.save(employee);
-        return new EmployeeResponse(savedEmployee.getId(), savedEmployee.getName(), savedEmployee.getRole());
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    public Employee addEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
-    public Optional<Employee> findByName(String name) {
-        return employeeRepository.findByName(name);
+    public Employee updateEmployee(Long id, Employee employeeDetails) {
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+        if (optionalEmployee.isPresent()) {
+            Employee existingEmployee = optionalEmployee.get();
+            existingEmployee.setName(employeeDetails.getName());
+            existingEmployee.setSalary(employeeDetails.getSalary());
+            existingEmployee.setNationalNumber(employeeDetails.getNationalNumber());
+            return employeeRepository.save(existingEmployee);
+        } else {
+            throw new RuntimeException("Employee not found with id " + id);
+        }
     }
 
-    @Transactional
-    public EmployeeResponse updateEmployeeProfile(Long employeeId, UpdateEmployeeRequest employeeDetails) {
-        Employee employee = employeeRepository.findById(employeeId)
-                .orElseThrow(() -> new RuntimeException("Employee not found"));
-
-        employee.setName(employeeDetails.getName());
-        employee.setRole(employeeDetails.getRole());
-
-        Employee updatedEmployee = employeeRepository.save(employee);
-        return new EmployeeResponse(updatedEmployee.getId(), updatedEmployee.getName(), updatedEmployee.getRole());
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found with id " + id));
     }
 
-    public Optional<Employee> findById(Long id) {
-        return employeeRepository.findById(id);
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
     }
 }

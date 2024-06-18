@@ -1,95 +1,49 @@
 package com.alosh.security.Services;
 
-import com.alosh.security.Dto.UpdateReservationRequest;
-import com.alosh.security.Dto.ReservationResponse;
-import com.alosh.security.Entity.Customer;
 import com.alosh.security.Entity.Reservation;
-import com.alosh.security.Entity.Room;
-import com.alosh.security.Repositories.CustomerRepository;
 import com.alosh.security.Repositories.ReservationRepository;
-import com.alosh.security.Repositories.RoomRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
+
 @Service
-@RequiredArgsConstructor
 public class ReservationService {
-    private final ReservationRepository reservationRepository;
-    private final CustomerRepository customerRepository;
-    private final RoomRepository roomRepository;
 
-    @Transactional
-    public ReservationResponse bookRoom(UpdateReservationRequest request) {
-        Customer customer = customerRepository.findById(request.getCustomerId())
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+    @Autowired
+    private ReservationRepository reservationRepository;
 
-        Room room = roomRepository.findById(request.getRoomId())
-                .orElseThrow(() -> new RuntimeException("Room not found"));
+    public Reservation reserveRoom(Reservation reservation) {
+        List<Reservation> overlappingReservations = reservationRepository.findByRoomIdAndEndDateAfterAndStartDateBefore(
+                reservation.getRoom().getId(),
+                reservation.getStartDate(),
+                reservation.getEndDate()
+        );
 
-        Reservation reservation = new Reservation();
-        reservation.setCustomer(customer);
-        reservation.setRoom(room);
-        reservation.setStartDate(request.getStartDate());
-        reservation.setEndDate(request.getEndDate());
-        reservation.setCancelled(false);
-        reservation.setCancellationApproved(false);
+        if (!overlappingReservations.isEmpty()) {
+            throw new RuntimeException("The room is already reserved for the requested period.");
+        }
 
-        Reservation savedReservation = reservationRepository.save(reservation);
-
-        return new ReservationResponse(savedReservation.getId(), savedReservation.getCustomer().getId(),
-                savedReservation.getRoom().getId(), savedReservation.getStartDate(),
-                savedReservation.getEndDate(), savedReservation.isCancelled(),
-                savedReservation.isCancellationApproved());
+        return reservationRepository.save(reservation);
     }
 
-    @Transactional
-    public ReservationResponse modifyReservation(Long reservationId, UpdateReservationRequest request) {
-        Reservation reservation = reservationRepository.findById(reservationId)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
-
-        Customer customer = customerRepository.findById(request.getCustomerId())
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
-        Room room = roomRepository.findById(request.getRoomId())
-                .orElseThrow(() -> new RuntimeException("Room not found"));
-
-        reservation.setCustomer(customer);
-        reservation.setRoom(room);
-        reservation.setStartDate(request.getStartDate());
-        reservation.setEndDate(request.getEndDate());
-
-        Reservation updatedReservation = reservationRepository.save(reservation);
-
-        return new ReservationResponse(updatedReservation.getId(), updatedReservation.getCustomer().getId(),
-                updatedReservation.getRoom().getId(), updatedReservation.getStartDate(),
-                updatedReservation.getEndDate(), updatedReservation.isCancelled(),
-                updatedReservation.isCancellationApproved());
+    public Reservation updateReservation(Long id, Reservation updatedReservation) {
+        Optional<Reservation> existingReservationOptional = reservationRepository.findById(id);
+        if (existingReservationOptional.isPresent()) {
+            Reservation existingReservation = existingReservationOptional.get();
+            existingReservation.setStartDate(updatedReservation.getStartDate());
+            existingReservation.setEndDate(updatedReservation.getEndDate());
+            existingReservation.setRoom(updatedReservation.getRoom());
+            return reservationRepository.save(existingReservation);
+        } else {
+            throw new RuntimeException("Reservation not found with id " + id);
+        }
     }
 
-    @Transactional
-    public void requestCancellation(Long reservationId) {
-        Reservation reservation = reservationRepository.findById(reservationId)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
-
-        reservation.setCancelled(true);
-        reservationRepository.save(reservation);
-    }
-
-    @Transactional
-    public void approveCancellation(Long reservationId) {
-        Reservation reservation = reservationRepository.findById(reservationId)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
-
-        if (!reservation.isCancelled())
-            throw new RuntimeException("Cancellation has not been requested");
-
-        reservation.setCancellationApproved(true);
-        reservationRepository.save(reservation);
-    }
-
-    public Optional<Reservation> findById(Long id) {
-        return reservationRepository.findById(id);
+    public void cancelReservation(Long id) {
+        reservationRepository.deleteById(id);
     }
 }

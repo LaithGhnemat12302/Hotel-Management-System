@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class RoomService {
     private final RoomRepository roomRepository;
 
-    @Transactional
+//    @Transactional
     public RoomResponse addRoom(UpdateRoomRequest request) {
         Room room = new Room();
         room.setType(request.getType());
@@ -31,7 +31,7 @@ public class RoomService {
                 savedRoom.getPrice(), savedRoom.getCapacity(), savedRoom.getFeatures());
     }
 
-    @Transactional
+//    @Transactional
     public RoomResponse updateRoom(Long roomId, UpdateRoomRequest request) {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));
@@ -63,7 +63,7 @@ public class RoomService {
                 .collect(Collectors.toList());
     }
 
-    @Transactional
+//    @Transactional
     public void deleteRoom(Long roomId) {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));

@@ -13,10 +13,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String role;
+    private Double salary;
+    private String nationalNumber;
 
-    @OneToMany(mappedBy = "assignedEmployee")
-    private List<HousekeepingTask> tasks;
 
-    // Getters and setters
 }

@@ -1,3 +1,35 @@
+#server:
+#  port: 8081
+#
+#spring:
+#  application:
+#    name: security
+#  datasource:
+#    password: 5555
+#    url: jdbc:postgresql://postgres:5432/hotel-database
+#    username: postgres
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#    show-sql: true
+#  open-in-view: false
+
+
+
+
+
+
+
+
+
+
+server:
+  port: 8080
+
 application:
   security:
     jwt:

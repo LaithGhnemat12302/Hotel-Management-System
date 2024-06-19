@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 public class RoomService {
     private final RoomRepository roomRepository;
 
-//    @Transactional
+    @Transactional
     public RoomResponse addRoom(UpdateRoomRequest request) {
         Room room = new Room();
         room.setType(request.getType());
@@ -31,7 +32,7 @@ public class RoomService {
                 savedRoom.getPrice(), savedRoom.getCapacity(), savedRoom.getFeatures());
     }
 
-//    @Transactional
+    @Transactional
     public RoomResponse updateRoom(Long roomId, UpdateRoomRequest request) {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));
@@ -63,11 +64,15 @@ public class RoomService {
                 .collect(Collectors.toList());
     }
 
-//    @Transactional
+    @Transactional
     public void deleteRoom(Long roomId) {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));
 
         roomRepository.delete(room);
+    }
+
+    public List<Room> findAvailableRoomsByDateRange(Date startDate, Date endDate) {
+        return roomRepository.findAvailableRoomsByDateRange(startDate, endDate);
     }
 }

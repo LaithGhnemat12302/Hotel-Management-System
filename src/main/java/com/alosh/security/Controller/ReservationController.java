@@ -1,28 +1,35 @@
 package com.alosh.security.Controller;
 
+import com.alosh.security.Dto.ReservationDto;
+import com.alosh.security.Dto.ReservationRequest;
 import com.alosh.security.Entity.Reservation;
 import com.alosh.security.Services.ReservationService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+
 
 @RestController
-@RequestMapping("/api/reservations")
+@RequestMapping("/api/v1/reservations")
+@SecurityRequirement(name = "bearerAuth")
 public class ReservationController {
 
     @Autowired
     private ReservationService reservationService;
-
-    @PostMapping
-    public ResponseEntity<?> reserveRoom(@RequestBody Reservation reservation) {
-        try {
-            Reservation newReservation = reservationService.reserveRoom(reservation);
-            return ResponseEntity.ok(newReservation);
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+//Reservation
+@PostMapping
+public ResponseEntity<?> reserveRoom(@RequestBody ReservationRequest reservationRequest) {
+    try {
+        Reservation newReservation = reservationService.reserveRoom(reservationRequest);
+        return ResponseEntity.ok(newReservation);
+    } catch (RuntimeException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
     }
+}
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateReservation(@PathVariable Long id, @RequestBody Reservation updatedReservation) {
@@ -38,5 +45,20 @@ public class ReservationController {
     public ResponseEntity<Void> cancelReservation(@PathVariable Long id) {
         reservationService.cancelReservation(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteReservation(@PathVariable Long id) {
+        reservationService.deleteReservation(id);
+    }
+
+    @GetMapping("/all")
+    public List<Reservation> getAllReservations() {
+        return reservationService.getAllReservations();
+    }
+
+    @DeleteMapping("/deleteRoomReservation/{reservationId}/{roomId}")
+    public void deleteReservationForOneRoom(@PathVariable Long reservationId, @PathVariable Long roomId) {
+        reservationService.deleteReservationForOneRoom(reservationId, roomId);
     }
 }

@@ -26,6 +26,5 @@ public class Room {
 
     private String features;
 
-    @OneToMany(mappedBy = "room")
-    private List<Reservation> reservations;
+
 }

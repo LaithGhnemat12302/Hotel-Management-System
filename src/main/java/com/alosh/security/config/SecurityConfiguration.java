@@ -54,6 +54,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/v1/reservations/**")
                         .hasRole(ADMIN.name())
                         .requestMatchers("api/v1/admin/**").hasRole(ADMIN.name())
+                        .requestMatchers("/api/v1/employees/**").hasRole(ADMIN.name())
                      //   .requestMatchers("/api/v1/customers").hasAuthority(ADMIN.name())
                         .anyRequest().authenticated())
 

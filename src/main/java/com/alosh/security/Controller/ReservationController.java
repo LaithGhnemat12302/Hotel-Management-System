@@ -6,6 +6,8 @@ import com.alosh.security.Entity.Reservation;
 import com.alosh.security.Services.ReservationService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,11 +23,12 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 //Reservation
+//    add reservation for a customer
 @PostMapping
 public ResponseEntity<?> reserveRoom(@RequestBody ReservationRequest reservationRequest) {
     try {
         Reservation newReservation = reservationService.reserveRoom(reservationRequest);
-        return ResponseEntity.ok(newReservation);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newReservation);
     } catch (RuntimeException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }

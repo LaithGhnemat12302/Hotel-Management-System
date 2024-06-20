@@ -19,24 +19,22 @@ public class HousekeepingTaskService {
     private final HousekeepingTaskRepository housekeepingTaskRepository;
     private final EmployeeRepository employeeRepository;
 
-//    @Transactional
-    public HousekeepingTaskResponse createTask(HousekeepingTaskRequest request) {
-        Employee employee = employeeRepository.findById(request.getAssignedEmployeeId())
-                .orElseThrow(() -> new RuntimeException("Employee not found"));
+public HousekeepingTaskResponse createTask(HousekeepingTaskRequest request) {
+    Employee employee = employeeRepository.findById(request.getAssignedEmployeeId())
+            .orElseThrow(() -> new RuntimeException("Employee not found"));
 
-        HousekeepingTask task = new HousekeepingTask();
-        task.setDescription(request.getDescription());
-        task.setStatus(request.getStatus());
-        task.setAssignedEmployee(employee);
+    HousekeepingTask task = new HousekeepingTask();
+    task.setDescription(request.getDescription());
+    task.setStatus(request.getStatus());
+    task.setAssignedEmployee(employee);
 
-        HousekeepingTask savedTask = housekeepingTaskRepository.save(task);
+    HousekeepingTask savedTask = housekeepingTaskRepository.save(task);
 
-        return new HousekeepingTaskResponse(savedTask.getId(), savedTask.getDescription(),
-                savedTask.getStatus(), savedTask.getAssignedEmployee().getId(),
-                savedTask.getAssignedEmployee().getName());
-    }
+    return new HousekeepingTaskResponse(savedTask.getId(), savedTask.getDescription(),
+            savedTask.getStatus(), savedTask.getAssignedEmployee().getId(),
+            savedTask.getAssignedEmployee().getName());
+}
 
-//    @Transactional
     public HousekeepingTaskResponse updateTask(Long taskId, HousekeepingTaskRequest request) {
         HousekeepingTask task = housekeepingTaskRepository.findById(taskId)
                 .orElseThrow(() -> new RuntimeException("Task not found"));

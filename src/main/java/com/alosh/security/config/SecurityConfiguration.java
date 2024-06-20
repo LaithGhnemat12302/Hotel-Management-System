@@ -16,7 +16,10 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
+import static com.alosh.security.user.Permission.CUSTOMER_CREATE;
 import static com.alosh.security.user.Role.ADMIN;
+import static com.alosh.security.user.Role.CUSTOMER;
+import static org.springframework.http.HttpMethod.POST;
 
 
 @Configuration
@@ -53,8 +56,12 @@ public class SecurityConfiguration {
                         .requestMatchers(WHITE_LIST_URL).permitAll()
                         .requestMatchers("/api/v1/reservations/**")
                         .hasRole(ADMIN.name())
+                        .requestMatchers(POST, "/api/v1/reservations/").hasRole( CUSTOMER.name())
                         .requestMatchers("api/v1/admin/**").hasRole(ADMIN.name())
                         .requestMatchers("/api/v1/employees/**").hasRole(ADMIN.name())
+                        .requestMatchers("/api/v1/search/**").hasRole(ADMIN.name())
+                        .requestMatchers("/api/v1/search/available-rooms").hasRole(CUSTOMER.name())
+
                      //   .requestMatchers("/api/v1/customers").hasAuthority(ADMIN.name())
                         .anyRequest().authenticated())
 

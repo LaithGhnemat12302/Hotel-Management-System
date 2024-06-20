@@ -4,6 +4,7 @@ import com.alosh.security.Dto.HousekeepingTaskRequest;
 import com.alosh.security.Dto.HousekeepingTaskResponse;
 import com.alosh.security.Services.HousekeepingTaskService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +19,13 @@ public class HousekeepingTaskController {
     @PostMapping
     public ResponseEntity<HousekeepingTaskResponse> createTask(
             @RequestBody HousekeepingTaskRequest request
-    )
-
-    {
-        HousekeepingTaskResponse response = housekeepingTaskService.createTask(request);
-
-        return ResponseEntity.ok(response);
+    ) {
+        try {
+            HousekeepingTaskResponse response = housekeepingTaskService.createTask(request);
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
     @PutMapping("/{id}")

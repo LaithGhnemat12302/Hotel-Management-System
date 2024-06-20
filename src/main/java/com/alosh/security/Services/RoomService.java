@@ -20,15 +20,25 @@ public class RoomService {
     @Transactional
     public RoomResponse addRoom(UpdateRoomRequest request) {
         Room room = new Room();
-        room.setType(request.getType());
         room.setStatus(request.getStatus());
         room.setPrice(request.getPrice());
         room.setCapacity(request.getCapacity());
         room.setFeatures(request.getFeatures());
 
         Room savedRoom = roomRepository.save(room);
+//          private Long id;
+//
+//    private String name;
+//
+//    private String status;
+//
+//    private double price;
+//
+//    private int capacity;
+//
+//    private String features;
 
-        return new RoomResponse(savedRoom.getId(), savedRoom.getType(), savedRoom.getStatus(),
+        return new RoomResponse(savedRoom.getId(), savedRoom.getName(), savedRoom.getStatus(),
                 savedRoom.getPrice(), savedRoom.getCapacity(), savedRoom.getFeatures());
     }
 
@@ -37,7 +47,7 @@ public class RoomService {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));
 
-        room.setType(request.getType());
+
         room.setStatus(request.getStatus());
         room.setPrice(request.getPrice());
         room.setCapacity(request.getCapacity());
@@ -45,7 +55,7 @@ public class RoomService {
 
         Room updatedRoom = roomRepository.save(room);
 
-        return new RoomResponse(updatedRoom.getId(), updatedRoom.getType(), updatedRoom.getStatus(),
+        return new RoomResponse(updatedRoom.getId(), updatedRoom.getName(), updatedRoom.getStatus(),
                 updatedRoom.getPrice(), updatedRoom.getCapacity(), updatedRoom.getFeatures());
     }
 
@@ -53,13 +63,13 @@ public class RoomService {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));
 
-        return new RoomResponse(room.getId(), room.getType(), room.getStatus(), room.getPrice(),
+        return new RoomResponse(room.getId(), room.getName(), room.getStatus(), room.getPrice(),
                 room.getCapacity(), room.getFeatures());
     }
 
     public List<RoomResponse> getAllRooms() {
         return roomRepository.findAll().stream()
-                .map(room -> new RoomResponse(room.getId(), room.getType(), room.getStatus(),
+                .map(room -> new RoomResponse(room.getId(), room.getName(), room.getStatus(),
                         room.getPrice(), room.getCapacity(), room.getFeatures()))
                 .collect(Collectors.toList());
     }

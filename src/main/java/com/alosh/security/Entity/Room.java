@@ -16,13 +16,18 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String type;
+    private String name;
 
     private String status;
 
     private double price;
 
     private int capacity;
+
+
+    private String size; // Added to match DTO
+
+    private String facilities; // Added to match DTO
 
     private String features;
 

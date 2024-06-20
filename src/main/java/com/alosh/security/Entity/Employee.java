@@ -19,4 +19,7 @@ public class Employee {
     private Double salary;
     private String nationalNumber;
 
+
+
+
 }

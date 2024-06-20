@@ -1,5 +1,6 @@
 package com.alosh.security.Controller;
 
+import com.alosh.security.Dto.customReservationDTO;
 import com.alosh.security.Entity.Reservation;
 import com.alosh.security.Entity.Room;
 import com.alosh.security.Services.SearchService;
@@ -13,21 +14,27 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/search")
+@RequestMapping("/api/v1/search")
 public class SearchController {
 
     @Autowired
     private SearchService searchService;
 
+
+
     @GetMapping("/reservations")
-    public ResponseEntity<List<Reservation>> searchReservations(
+    public ResponseEntity<?> searchReservations(
             @RequestParam(required = false) String customerName,
             @RequestParam(required = false) Long customerId,
-            @RequestParam Date date
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date date
     ) {
-        List<Reservation> reservations = searchService.searchReservations(customerName, customerId, date);
+        List<customReservationDTO> reservations = searchService.searchReservationsByCustomer(customerName, customerId);
+        if (reservations.isEmpty()) {
+            return ResponseEntity.status(404).body("There are no reservations for the given customer.");
+        }
         return ResponseEntity.ok(reservations);
     }
+
 
     @GetMapping("/customer/{id}")
     public ResponseEntity<User> searchCustomer(@PathVariable Integer id) {

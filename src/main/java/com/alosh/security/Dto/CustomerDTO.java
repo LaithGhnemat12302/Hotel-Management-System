@@ -1,22 +1,15 @@
 package com.alosh.security.Dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
-public class RoomResponse {
+@AllArgsConstructor
+public class CustomerDTO {
     private Long id;
-
     private String name;
-
-    private String status;
-
-    private double price;
-
-    private int capacity;
-
-    private String features;
 }

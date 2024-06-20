@@ -1,7 +1,7 @@
 # Hotel Management System
 
 <P>This is the ERD for our Hotel Management System</P>
-![ERD Diagram](assets/hotel.PNG)
+![ERD Diagram]('assets/hotel.PNG')
 
 
 This repository is for a Hotel Management System. It contains a Spring Boot applicaton that manages a hotel based on the provided data base schema. The project includes a docker configuration for easy setup and deployment. The API endpoints have been secured and swagger documentation is available.

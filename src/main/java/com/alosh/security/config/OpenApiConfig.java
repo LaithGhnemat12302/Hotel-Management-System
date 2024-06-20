@@ -13,11 +13,11 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @OpenAPIDefinition(
         info = @Info(
                 contact = @Contact(
-                        name = "auther name",
-                        email = "contact@mail.com",
-                        url = "https://some-url.com"
+                        name = "Alaa Darawish,Laith Hamaile ",
+                        email = "alosh@mail.com",
+                        url = "https://aloshcoding.com"
                 ),
-                description = "OpenApi documentation for Spring Security",
+                description = "OpenApi documentation for Spring Hotel Management System",
                 title = "OpenApi specification",
                 version = "1.0",
                 license = @License(
@@ -32,7 +32,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         url = "http://localhost:8080"
                 ),
                 @Server(
-                        description = "PROD ENV",
+                        description = "HOTEL ENV",
                         url = "https://some-url.com"
                 )
         },

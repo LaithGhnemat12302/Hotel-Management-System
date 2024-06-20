@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 application:
   security:
     jwt:
@@ -15,9 +18,11 @@ spring:
     username: postgres
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+#create-drop

@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -57,11 +58,20 @@ public class JwtService {
   public String generateToken(UserDetails userDetails) {
     return generateToken(new HashMap<>(), userDetails);
   }
+//
+//  public String generateToken(
+//      Map<String, Object> extraClaims,
+//      UserDetails userDetails
+//  ) {
+//    return buildToken(extraClaims, userDetails, jwtExpiration);
+//  }
 
   public String generateToken(
-      Map<String, Object> extraClaims,
-      UserDetails userDetails
+          Map<String, Object> extraClaims,
+          UserDetails userDetails
   ) {
+    String role = extractUserRole(userDetails);
+    extraClaims.put("role", role);
     return buildToken(extraClaims, userDetails, jwtExpiration);
   }
 
@@ -86,6 +96,7 @@ public class JwtService {
             .compact();
   }
 
+
   public boolean isTokenValid(String token, UserDetails userDetails) {
     final String username = extractUsername(token);
     return (username.equals(userDetails.getUsername())) && !isTokenExpired(token);
@@ -106,6 +117,15 @@ public class JwtService {
         .build()
         .parseClaimsJws(token)
         .getBody();
+  }
+
+  private String extractUserRole(UserDetails userDetails) {
+    for (GrantedAuthority authority : userDetails.getAuthorities()) {
+      // Assuming the role name is the authority without the "ROLE_" prefix
+      String authorityName = authority.getAuthority().replace("ROLE_", "");
+      return authorityName; // Return the first role found
+    }
+    return "ADMIN"; // Default to "USER" role if no roles are found
   }
 
   private Key getSignInKey() {

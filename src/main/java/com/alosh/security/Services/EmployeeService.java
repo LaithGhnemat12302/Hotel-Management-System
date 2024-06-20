@@ -3,6 +3,7 @@ package com.alosh.security.Services;
 import com.alosh.security.Dto.EmployeeResponse;
 import com.alosh.security.Dto.UpdateEmployeeRequest;
 import com.alosh.security.Entity.Employee;
+import com.alosh.security.Errors.EmployeeNotFoundException;
 import com.alosh.security.Repositories.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +25,14 @@ public class EmployeeService {
     }
 
     public Employee updateEmployee(Long id, Employee employeeDetails) {
-        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
-        if (optionalEmployee.isPresent()) {
-            Employee existingEmployee = optionalEmployee.get();
-            existingEmployee.setName(employeeDetails.getName());
-            existingEmployee.setSalary(employeeDetails.getSalary());
-            existingEmployee.setNationalNumber(employeeDetails.getNationalNumber());
-            return employeeRepository.save(existingEmployee);
-        } else {
-            throw new RuntimeException("Employee not found with id " + id);
-        }
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with id " + id));
+
+        employee.setName(employeeDetails.getName());
+        employee.setSalary(employeeDetails.getSalary());
+        employee.setNationalNumber(employeeDetails.getNationalNumber());
+
+        return employeeRepository.save(employee);
     }
 
     public Employee getEmployeeById(Long id) {

@@ -2,12 +2,14 @@ package com.alosh.security.Controller;
 
 import com.alosh.security.Dto.UpdateRoomRequest;
 import com.alosh.security.Dto.RoomResponse;
+import com.alosh.security.Entity.Room;
 import com.alosh.security.Services.RoomService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -26,9 +28,7 @@ public class RoomController {
     public ResponseEntity<RoomResponse> updateRoom(
             @PathVariable Long id,
             @Valid @RequestBody UpdateRoomRequest request
-    )
-
-    {
+    ) {
         RoomResponse response = roomService.updateRoom(id, request);
         return ResponseEntity.ok(response);
     }
@@ -49,5 +49,11 @@ public class RoomController {
     public ResponseEntity<String> deleteRoom(@PathVariable Long id) {
         roomService.deleteRoom(id);
         return ResponseEntity.ok("Room deleted successfully");
+    }
+
+    @GetMapping("/available")
+    public ResponseEntity<List<Room>> findAvailableRooms(@RequestParam Date startDate, @RequestParam Date endDate) {
+        List<Room> availableRooms = roomService.findAvailableRoomsByDateRange(startDate, endDate);
+        return ResponseEntity.ok(availableRooms);
     }
 }

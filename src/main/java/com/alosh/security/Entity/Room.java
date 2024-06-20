@@ -16,7 +16,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String type;
+    private String name;
 
     private String status;
 
@@ -24,8 +24,12 @@ public class Room {
 
     private int capacity;
 
+
+    private String size; // Added to match DTO
+
+    private String facilities; // Added to match DTO
+
     private String features;
 
-    @OneToMany(mappedBy = "room")
-    private List<Reservation> reservations;
+
 }

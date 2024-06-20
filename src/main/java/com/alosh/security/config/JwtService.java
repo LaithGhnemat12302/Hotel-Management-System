@@ -125,7 +125,7 @@ public class JwtService {
       String authorityName = authority.getAuthority().replace("ROLE_", "");
       return authorityName; // Return the first role found
     }
-    return "ADMIN"; // Default to "USER" role if no roles are found
+    return "CUSTOMER"; // Default to "USER" role if no roles are found
   }
 
   private Key getSignInKey() {

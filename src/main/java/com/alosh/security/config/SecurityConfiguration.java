@@ -54,9 +54,9 @@ public class SecurityConfiguration {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
-                        .requestMatchers("/api/v1/reservations/**")
-                        .hasRole(ADMIN.name())
-                        .requestMatchers(POST, "/api/v1/reservations/").hasRole( CUSTOMER.name())
+                        .requestMatchers(POST, "/api/v1/reservations/").hasAnyRole(CUSTOMER.name(), ADMIN.name())
+//                        .requestMatchers("/api/v1/reservations/**")
+//                        .hasRole(ADMIN.name())
                         .requestMatchers("api/v1/admin/**").hasRole(ADMIN.name())
                         .requestMatchers("/api/v1/employees/**").hasRole(ADMIN.name())
                         .requestMatchers("/api/v1/search/**").hasRole(ADMIN.name())

@@ -64,4 +64,13 @@ public ResponseEntity<?> reserveRoom(@RequestBody ReservationRequest reservation
     public void deleteReservationForOneRoom(@PathVariable Long reservationId, @PathVariable Long roomId) {
         reservationService.deleteReservationForOneRoom(reservationId, roomId);
     }
+
+    @GetMapping("/customer/{customerId}")
+    public ResponseEntity<List<Reservation>> getReservationsByCustomerId(@PathVariable Long customerId) {
+        List<Reservation> reservations = reservationService.getReservationsByCustomerId(customerId);
+        if (reservations.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(reservations);
+    }
 }

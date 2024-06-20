@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -16,7 +18,6 @@ public class Invoice {
 
     private double amount;
 
-    @OneToOne
-    @JoinColumn(name = "reservation_id")
-    private Reservation reservation;
+    @OneToMany(mappedBy = "invoice")
+    private List<Reservation> reservations;
 }

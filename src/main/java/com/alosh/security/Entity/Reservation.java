@@ -35,4 +35,8 @@ public class Reservation {
             inverseJoinColumns = @JoinColumn(name = "room_id")
     )
     private List<Room> rooms;
+
+    @ManyToOne
+    @JoinColumn(name = "invoice_id")
+    private Invoice invoice;
 }

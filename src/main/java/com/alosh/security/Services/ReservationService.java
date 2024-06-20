@@ -87,7 +87,16 @@ public class ReservationService {
         }
     }
 
+    @Transactional
     public void cancelReservation(Long id) {
+        Reservation reservation = reservationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Reservation not found with ID: " + id));
+
+        // Remove associations with rooms
+        reservation.getRooms().clear();
+        reservationRepository.save(reservation);
+
+        // Now delete the reservation
         reservationRepository.deleteById(id);
     }
 
@@ -113,4 +122,10 @@ public class ReservationService {
             throw new RuntimeException("Reservation not found with id " + reservationId);
         }
     }
+
+    public List<Reservation> getReservationsByCustomerId(Long customerId) {
+        return reservationRepository.findByCustomerId(customerId);
+    }
+
+
 }

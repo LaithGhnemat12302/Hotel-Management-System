@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class InvoiceRequest {
-    private Long reservationId;
+import java.util.List;
 
+
+@Data
+public class InvoiceRequest {
     private double amount;
+    private List<Long> reservationIds;
 }

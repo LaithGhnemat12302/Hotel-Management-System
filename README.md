@@ -1,6 +1,7 @@
 # Hotel Management System
 
 <P>This is the ERD for our Hotel Management System</P>
+
 ![ERD Diagram](ERD/hotel.PNG)
 
 

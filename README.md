@@ -10,29 +10,68 @@ This repository is for a Hotel Management System. It contains a Spring Boot appl
     <li>
       <p dir="auto">Java 17</p>
     </li>
-  
     <li>
       <p dir="auto">Maven</p>
     </li>
-    
     <li>
       <p dir="auto">Docker</p>
     </li>
-    
     <li>
       <p dir="auto">Postman</p>
     </li>
 </ul>
 
-<p dir="auto">Clone the Repository</p>
+<p dir="auto">Clone the Repository:</p>
 
 <p dir="auto">To clone the repository and navigate into the directory, run the following commands:</p>
 
-<p dir="auto">git clone <a href="https://github.com/AlaYOD/Hotel-Management-System.git">https://github.com/AlaYOD/Hotel-Management-System.git</a></p>
+<ul>
+    <li>
+        git clone <a href="https://github.com/AlaYOD/Hotel-Management-System.git">https://github.com/AlaYOD/HotelManagement-System.git</a>
+    </li>
+    <li>
+        <p>cd Hotel-Management-System</p>
+    </li>
+</ul>
 
-<p>cd Hotel-Management-System</p>
+<p dir="auto">Building the Application:</p>
 
-<p dir="auto">Building the Application</p>
+<p dir="auto">To compile the source code, package the compiled code into a JAR file, and install the packaged code in your local repository:</p>
+
+<p dir="auto">mvn clean install</p>
+
+<p dir="auto">Creating and Running the Docker Image</p>
+<p dir="auto">To create a Docker image for the application, ensure Docker is running and execute:</p>
+
+<p dir="auto">docker build -t hotel-management-app .</p>
+<p dir="auto">This will build a Docker image named hotel-management-app.</p>
+
+<p dir="auto">To run the application in a Docker container:</p>
+<p dir="auto">docker run -p 8080:8080 hotel-management-app</p>
+<p dir="auto">The application will be accessible at <a href="http://localhost:8080" rel="nofollow">http://localhost:8080</a>.</p>
+
+<p dir="auto">Postman Collection</p>
+<p dir="auto">You can find the Postman collection for API testing in the repository. Download it and import into your Postman application for local testing.</p>
+
+<p dir="auto">API Documentation</p>
+<p dir="auto">You can find the API documentation at <a href="http://localhost:8080/swagger-ui.html" rel="nofollow">http://localhost:8080/swagger-ui.html</a> when the application is running. The documentation includes information about all endpoints, models, and authentication.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

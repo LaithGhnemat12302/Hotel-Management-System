@@ -1,7 +1,7 @@
 # Hotel Management System
 
 <P>This is the ERD for our Hotel Management System</P>
-<p>![ERD](https://github.com/AlaYOD/Hotel-Management-System/assets/134155389/b24b889b-005d-456d-9186-c31447c1ec70)</p>
+![ERD Diagram](assets/hotel.PNG)
 
 
 This repository is for a Hotel Management System. It contains a Spring Boot applicaton that manages a hotel based on the provided data base schema. The project includes a docker configuration for easy setup and deployment. The API endpoints have been secured and swagger documentation is available.

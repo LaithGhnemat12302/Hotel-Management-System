@@ -91,27 +91,3 @@ Include the token in the Authorization header with the prefix "Bearer " in all r
 <p dir="auto">docker run -p 8080:8080 -e SPRING_DATASOURCE_URL="jdbc:mysql://host.docker.internal:3306/hotel-management?useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;zeroDateTimeBehavior=convertToNull" -e SPRING_DATASOURCE_USERNAME=&lt;your_username&gt; -e SPRING_DATASOURCE_PASSWORD=&lt;your_password&gt; my-spring-app</p>
 </li>
 </ul>
-
-</article></div></div></div></div></div> <!-- --> <!-- --> <script type="application/json" id="__PRIMER_DATA_:R0:__">{"resolvedServerColorMode":"night"}</script></div>
-</react-partial>
-
-<input type="hidden" value="GFzJJQuLU1Z2K1zNvp41gOARARK-bejxPeGf0fe649AnNUqcWUpppASqIwIUIBZPtoVQNX4AjP-XhOfTrb-GIw" data-csrf="true" id="react-codespace-csrf" />
-</div>
-
-<div data-view-component="true" class="Layout-sidebar">      
-      <div class="BorderGrid about-margin" data-pjax>
-        <div class="BorderGrid-row">
-          <div class="BorderGrid-cell">
-            <div class="hide-sm hide-md">
-  <h2 class="mb-3 h4">About</h2>
-      <div class="f4 my-3 color-fg-muted text-italic">
-        No description, website, or topics provided.
-      </div>
-    <h3 class="sr-only">Resources</h3>
-    <div class="mt-2">
-      <a class="Link--muted" data-analytics-event="{&quot;category&quot;:&quot;Repository Overview&quot;,&quot;action&quot;:&quot;click&quot;,&quot;label&quot;:&quot;location:sidebar;file:readme&quot;}" href="#readme-ov-file">
-        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-book mr-2">
-    <path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"></path>
-</svg>
-        Readme
-</a>    </div>

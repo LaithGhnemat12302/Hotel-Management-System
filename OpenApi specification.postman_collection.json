@@ -1,0 +1,4236 @@
+{
+	"info": {
+		"_postman_id": "74f3907a-eb4a-43e5-b21d-87e0da475fb1",
+		"name": "OpenApi specification",
+		"description": "OpenApi documentation for Spring Hotel Management System\n\nContact Support:\n Name: Alaa Darawish,Laith Hamaile \n Email: alosh@mail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30317031"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "rooms",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Room By Id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/rooms/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"rooms",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/rooms/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"rooms",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Room",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/rooms/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"rooms",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/rooms/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"rooms",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Room",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/rooms/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"rooms",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/rooms/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"rooms",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "available",
+									"item": [
+										{
+											"name": "find Available Rooms",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/rooms/available?startDate=<dateTime>&endDate=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"rooms",
+														"available"
+													],
+													"query": [
+														{
+															"key": "startDate",
+															"value": "<dateTime>",
+															"description": "(Required) "
+														},
+														{
+															"key": "endDate",
+															"value": "<dateTime>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/rooms/available?startDate=<dateTime>&endDate=<dateTime>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"rooms",
+																"available"
+															],
+															"query": [
+																{
+																	"key": "startDate",
+																	"value": "<dateTime>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "endDate",
+																	"value": "<dateTime>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"<string>\",\n    \"price\": \"<double>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"<string>\",\n    \"price\": \"<double>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  }\n]"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Rooms",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/rooms",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"rooms"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/rooms",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"rooms"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"<string>\",\n    \"price\": \"<double>\",\n    \"capacity\": \"<integer>\",\n    \"features\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"<string>\",\n    \"price\": \"<double>\",\n    \"capacity\": \"<integer>\",\n    \"features\": \"<string>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "add Room",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/rooms",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"rooms"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/rooms",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"rooms"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"price\": \"<double>\",\n  \"capacity\": \"<integer>\",\n  \"features\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "reservations",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "update Reservation",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"customer\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"user\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"role\": \"USER\",\n      \"tokens\": [\n        {\n          \"id\": \"<integer>\",\n          \"token\": \"<string>\",\n          \"tokenType\": \"BEARER\",\n          \"revoked\": \"<boolean>\",\n          \"expired\": \"<boolean>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        {\n          \"id\": \"<integer>\",\n          \"token\": \"<string>\",\n          \"tokenType\": \"BEARER\",\n          \"revoked\": \"<boolean>\",\n          \"expired\": \"<boolean>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        }\n      ],\n      \"enabled\": \"<boolean>\",\n      \"username\": \"<string>\",\n      \"authorities\": [\n        {\n          \"authority\": \"<string>\"\n        },\n        {\n          \"authority\": \"<string>\"\n        }\n      ],\n      \"accountNonExpired\": \"<boolean>\",\n      \"credentialsNonExpired\": \"<boolean>\",\n      \"accountNonLocked\": \"<boolean>\"\n    },\n    \"enabled\": \"<boolean>\",\n    \"username\": \"<string>\",\n    \"authorities\": [\n      {\n        \"authority\": \"<string>\"\n      },\n      {\n        \"authority\": \"<string>\"\n      }\n    ],\n    \"accountNonExpired\": \"<boolean>\",\n    \"credentialsNonExpired\": \"<boolean>\",\n    \"accountNonLocked\": \"<boolean>\"\n  },\n  \"rooms\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"status\": \"<string>\",\n      \"price\": \"<double>\",\n      \"capacity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"status\": \"<string>\",\n      \"price\": \"<double>\",\n      \"capacity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    }\n  ],\n  \"invoice\": {\n    \"id\": \"<long>\",\n    \"amount\": \"<double>\",\n    \"reservations\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n      }\n    ]\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/reservations/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"reservations",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"customer\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"user\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"role\": \"USER\",\n      \"tokens\": [\n        {\n          \"id\": \"<integer>\",\n          \"token\": \"<string>\",\n          \"tokenType\": \"BEARER\",\n          \"revoked\": \"<boolean>\",\n          \"expired\": \"<boolean>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        {\n          \"id\": \"<integer>\",\n          \"token\": \"<string>\",\n          \"tokenType\": \"BEARER\",\n          \"revoked\": \"<boolean>\",\n          \"expired\": \"<boolean>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        }\n      ],\n      \"enabled\": \"<boolean>\",\n      \"username\": \"<string>\",\n      \"authorities\": [\n        {\n          \"authority\": \"<string>\"\n        },\n        {\n          \"authority\": \"<string>\"\n        }\n      ],\n      \"accountNonExpired\": \"<boolean>\",\n      \"credentialsNonExpired\": \"<boolean>\",\n      \"accountNonLocked\": \"<boolean>\"\n    },\n    \"enabled\": \"<boolean>\",\n    \"username\": \"<string>\",\n    \"authorities\": [\n      {\n        \"authority\": \"<string>\"\n      },\n      {\n        \"authority\": \"<string>\"\n      }\n    ],\n    \"accountNonExpired\": \"<boolean>\",\n    \"credentialsNonExpired\": \"<boolean>\",\n    \"accountNonLocked\": \"<boolean>\"\n  },\n  \"rooms\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"status\": \"<string>\",\n      \"price\": \"<double>\",\n      \"capacity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"status\": \"<string>\",\n      \"price\": \"<double>\",\n      \"capacity\": \"<integer>\",\n      \"size\": \"<string>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    }\n  ],\n  \"invoice\": {\n    \"id\": \"<long>\",\n    \"amount\": \"<double>\",\n    \"reservations\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n      }\n    ]\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/reservations/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"reservations",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										},
+										{
+											"name": "cancel Reservation",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/reservations/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"reservations",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/reservations/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"reservations",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "customer",
+									"item": [
+										{
+											"name": "{customerId}",
+											"item": [
+												{
+													"name": "get Reservations By Customer Id",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/reservations/customer/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"reservations",
+																"customer",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/reservations/customer/:customerId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"reservations",
+																		"customer",
+																		":customerId"
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"id\": \"<long>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"customer\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"user\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"role\": \"USER\",\n        \"tokens\": [\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          },\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          }\n        ],\n        \"enabled\": \"<boolean>\",\n        \"username\": \"<string>\",\n        \"authorities\": [\n          {\n            \"authority\": \"<string>\"\n          },\n          {\n            \"authority\": \"<string>\"\n          }\n        ],\n        \"accountNonExpired\": \"<boolean>\",\n        \"credentialsNonExpired\": \"<boolean>\",\n        \"accountNonLocked\": \"<boolean>\"\n      },\n      \"enabled\": \"<boolean>\",\n      \"username\": \"<string>\",\n      \"authorities\": [\n        {\n          \"authority\": \"<string>\"\n        },\n        {\n          \"authority\": \"<string>\"\n        }\n      ],\n      \"accountNonExpired\": \"<boolean>\",\n      \"credentialsNonExpired\": \"<boolean>\",\n      \"accountNonLocked\": \"<boolean>\"\n    },\n    \"rooms\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      }\n    ],\n    \"invoice\": {\n      \"id\": \"<long>\",\n      \"amount\": \"<double>\",\n      \"reservations\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        }\n      ]\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"customer\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"user\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"role\": \"USER\",\n        \"tokens\": [\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          },\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          }\n        ],\n        \"enabled\": \"<boolean>\",\n        \"username\": \"<string>\",\n        \"authorities\": [\n          {\n            \"authority\": \"<string>\"\n          },\n          {\n            \"authority\": \"<string>\"\n          }\n        ],\n        \"accountNonExpired\": \"<boolean>\",\n        \"credentialsNonExpired\": \"<boolean>\",\n        \"accountNonLocked\": \"<boolean>\"\n      },\n      \"enabled\": \"<boolean>\",\n      \"username\": \"<string>\",\n      \"authorities\": [\n        {\n          \"authority\": \"<string>\"\n        },\n        {\n          \"authority\": \"<string>\"\n        }\n      ],\n      \"accountNonExpired\": \"<boolean>\",\n      \"credentialsNonExpired\": \"<boolean>\",\n      \"accountNonLocked\": \"<boolean>\"\n    },\n    \"rooms\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      }\n    ],\n    \"invoice\": {\n      \"id\": \"<long>\",\n      \"amount\": \"<double>\",\n      \"reservations\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        }\n      ]\n    }\n  }\n]"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "get All Reservations",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/reservations/all",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"reservations",
+														"all"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/reservations/all",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"reservations",
+																"all"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"id\": \"<long>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"customer\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"user\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"role\": \"USER\",\n        \"tokens\": [\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          },\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          }\n        ],\n        \"enabled\": \"<boolean>\",\n        \"username\": \"<string>\",\n        \"authorities\": [\n          {\n            \"authority\": \"<string>\"\n          },\n          {\n            \"authority\": \"<string>\"\n          }\n        ],\n        \"accountNonExpired\": \"<boolean>\",\n        \"credentialsNonExpired\": \"<boolean>\",\n        \"accountNonLocked\": \"<boolean>\"\n      },\n      \"enabled\": \"<boolean>\",\n      \"username\": \"<string>\",\n      \"authorities\": [\n        {\n          \"authority\": \"<string>\"\n        },\n        {\n          \"authority\": \"<string>\"\n        }\n      ],\n      \"accountNonExpired\": \"<boolean>\",\n      \"credentialsNonExpired\": \"<boolean>\",\n      \"accountNonLocked\": \"<boolean>\"\n    },\n    \"rooms\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      }\n    ],\n    \"invoice\": {\n      \"id\": \"<long>\",\n      \"amount\": \"<double>\",\n      \"reservations\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        }\n      ]\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"customer\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"user\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"role\": \"USER\",\n        \"tokens\": [\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          },\n          {\n            \"id\": \"<integer>\",\n            \"token\": \"<string>\",\n            \"tokenType\": \"BEARER\",\n            \"revoked\": \"<boolean>\",\n            \"expired\": \"<boolean>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          }\n        ],\n        \"enabled\": \"<boolean>\",\n        \"username\": \"<string>\",\n        \"authorities\": [\n          {\n            \"authority\": \"<string>\"\n          },\n          {\n            \"authority\": \"<string>\"\n          }\n        ],\n        \"accountNonExpired\": \"<boolean>\",\n        \"credentialsNonExpired\": \"<boolean>\",\n        \"accountNonLocked\": \"<boolean>\"\n      },\n      \"enabled\": \"<boolean>\",\n      \"username\": \"<string>\",\n      \"authorities\": [\n        {\n          \"authority\": \"<string>\"\n        },\n        {\n          \"authority\": \"<string>\"\n        }\n      ],\n      \"accountNonExpired\": \"<boolean>\",\n      \"credentialsNonExpired\": \"<boolean>\",\n      \"accountNonLocked\": \"<boolean>\"\n    },\n    \"rooms\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"status\": \"<string>\",\n        \"price\": \"<double>\",\n        \"capacity\": \"<integer>\",\n        \"size\": \"<string>\",\n        \"facilities\": \"<string>\",\n        \"features\": \"<string>\"\n      }\n    ],\n    \"invoice\": {\n      \"id\": \"<long>\",\n      \"amount\": \"<double>\",\n      \"reservations\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Reservation detected>\"\n        }\n      ]\n    }\n  }\n]"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "deleteRoomReservation",
+									"item": [
+										{
+											"name": "{reservationId}",
+											"item": [
+												{
+													"name": "{roomId}",
+													"item": [
+														{
+															"name": "delete Reservation For One Room",
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": [
+																		{
+																			"key": "token",
+																			"value": "{{bearerToken}}",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/reservations/deleteRoomReservation/:reservationId/:roomId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"reservations",
+																		"deleteRoomReservation",
+																		":reservationId",
+																		":roomId"
+																	],
+																	"variable": [
+																		{
+																			"key": "reservationId",
+																			"value": "<long>",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "roomId",
+																			"value": "<long>",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [
+																			{
+																				"key": "Authorization",
+																				"value": "Bearer <token>",
+																				"description": "Added as a part of security scheme: bearer"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/reservations/deleteRoomReservation/:reservationId/:roomId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"reservations",
+																				"deleteRoomReservation",
+																				":reservationId",
+																				":roomId"
+																			],
+																			"variable": [
+																				{
+																					"key": "reservationId"
+																				},
+																				{
+																					"key": "roomId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"body": ""
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "{id}",
+											"item": [
+												{
+													"name": "delete Reservation",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/reservations/delete/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"reservations",
+																"delete",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/reservations/delete/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"reservations",
+																		"delete",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "reserve Room",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"customer\": {\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"id\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/reservations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"reservations"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"customer\": {\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"id\": \"<long>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/reservations",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"reservations"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "invoices",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Invoice By Id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/invoices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invoices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/invoices/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"invoices",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}"
+												}
+											]
+										},
+										{
+											"name": "update Invoice",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/invoices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invoices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/invoices/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"invoices",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Invoice",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/invoices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invoices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/invoices/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"invoices",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Invoices",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/invoices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invoices"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/invoices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invoices"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"amount\": \"<double>\",\n    \"reservationIds\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"amount\": \"<double>\",\n    \"reservationIds\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "create Invoice",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/invoices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invoices"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/invoices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invoices"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"amount\": \"<double>\",\n  \"reservationIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "housekeeping-tasks",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Task By Id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"housekeeping-tasks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"housekeeping-tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\",\n  \"assignedEmployeeName\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Task",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"housekeeping-tasks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"housekeeping-tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\",\n  \"assignedEmployeeName\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Task",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"housekeeping-tasks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"housekeeping-tasks",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "employee",
+									"item": [
+										{
+											"name": "{employeeId}",
+											"item": [
+												{
+													"name": "get Tasks By Employee Id",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/employee/:employeeId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"housekeeping-tasks",
+																"employee",
+																":employeeId"
+															],
+															"variable": [
+																{
+																	"key": "employeeId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/housekeeping-tasks/employee/:employeeId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"housekeeping-tasks",
+																		"employee",
+																		":employeeId"
+																	],
+																	"variable": [
+																		{
+																			"key": "employeeId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"assignedEmployeeId\": \"<long>\",\n    \"assignedEmployeeName\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"assignedEmployeeId\": \"<long>\",\n    \"assignedEmployeeName\": \"<string>\"\n  }\n]"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Tasks",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/housekeeping-tasks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"housekeeping-tasks"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/housekeeping-tasks",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"housekeeping-tasks"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"assignedEmployeeId\": \"<long>\",\n    \"assignedEmployeeName\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"assignedEmployeeId\": \"<long>\",\n    \"assignedEmployeeName\": \"<string>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "create Task",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/housekeeping-tasks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"housekeeping-tasks"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/housekeeping-tasks",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"housekeeping-tasks"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedEmployeeId\": \"<long>\",\n  \"assignedEmployeeName\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "employees",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Employee By Id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/employees/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"employees",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/employees/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"employees",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Employee",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/employees/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"employees",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/employees/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"employees",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Employees",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/employees",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"employees"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/employees",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"employees"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"salary\": \"<double>\",\n    \"nationalNumber\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"salary\": \"<double>\",\n    \"nationalNumber\": \"<string>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "add Employee",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/employees",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"employees"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/employees",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"employees"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"nationalNumber\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "customers",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Customer Profile",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Customer Profile",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "register",
+									"item": [
+										{
+											"name": "register Customer",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"USER\",\n    \"tokens\": [\n      {\n        \"id\": \"<integer>\",\n        \"token\": \"<string>\",\n        \"tokenType\": \"BEARER\",\n        \"revoked\": \"<boolean>\",\n        \"expired\": \"<boolean>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      },\n      {\n        \"id\": \"<integer>\",\n        \"token\": \"<string>\",\n        \"tokenType\": \"BEARER\",\n        \"revoked\": \"<boolean>\",\n        \"expired\": \"<boolean>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      }\n    ],\n    \"enabled\": \"<boolean>\",\n    \"username\": \"<string>\",\n    \"authorities\": [\n      {\n        \"authority\": \"<string>\"\n      },\n      {\n        \"authority\": \"<string>\"\n      }\n    ],\n    \"accountNonExpired\": \"<boolean>\",\n    \"credentialsNonExpired\": \"<boolean>\",\n    \"accountNonLocked\": \"<boolean>\"\n  },\n  \"enabled\": \"<boolean>\",\n  \"username\": \"<string>\",\n  \"authorities\": [\n    {\n      \"authority\": \"<string>\"\n    },\n    {\n      \"authority\": \"<string>\"\n    }\n  ],\n  \"accountNonExpired\": \"<boolean>\",\n  \"credentialsNonExpired\": \"<boolean>\",\n  \"accountNonLocked\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers",
+														"register"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"USER\",\n    \"tokens\": [\n      {\n        \"id\": \"<integer>\",\n        \"token\": \"<string>\",\n        \"tokenType\": \"BEARER\",\n        \"revoked\": \"<boolean>\",\n        \"expired\": \"<boolean>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      },\n      {\n        \"id\": \"<integer>\",\n        \"token\": \"<string>\",\n        \"tokenType\": \"BEARER\",\n        \"revoked\": \"<boolean>\",\n        \"expired\": \"<boolean>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      }\n    ],\n    \"enabled\": \"<boolean>\",\n    \"username\": \"<string>\",\n    \"authorities\": [\n      {\n        \"authority\": \"<string>\"\n      },\n      {\n        \"authority\": \"<string>\"\n      }\n    ],\n    \"accountNonExpired\": \"<boolean>\",\n    \"credentialsNonExpired\": \"<boolean>\",\n    \"accountNonLocked\": \"<boolean>\"\n  },\n  \"enabled\": \"<boolean>\",\n  \"username\": \"<string>\",\n  \"authorities\": [\n    {\n      \"authority\": \"<string>\"\n    },\n    {\n      \"authority\": \"<string>\"\n    }\n  ],\n  \"accountNonExpired\": \"<boolean>\",\n  \"credentialsNonExpired\": \"<boolean>\",\n  \"accountNonLocked\": \"<boolean>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/register",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																"register"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "change-password",
+									"item": [
+										{
+											"name": "{id}",
+											"item": [
+												{
+													"name": "change Password",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"currentPassword\": \"<string>\",\n  \"newPassword\": \"<string>\",\n  \"confirmationPassword\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/change-password/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																"change-password",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"currentPassword\": \"<string>\",\n  \"newPassword\": \"<string>\",\n  \"confirmationPassword\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/change-password/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		"change-password",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "<string>"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "admin",
+							"item": [
+								{
+									"name": "update",
+									"item": [
+										{
+											"name": "{id}",
+											"item": [
+												{
+													"name": "update Admine",
+													"request": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/update/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																"update",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/admin/update/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"admin",
+																		"update",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "login",
+									"item": [
+										{
+											"name": "log In",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/admin/login?email=<string>&password=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"admin",
+														"login"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "password",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/login?email=<string>&password=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																"login"
+															],
+															"query": [
+																{
+																	"key": "email",
+																	"value": "<string>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "password",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "add",
+									"item": [
+										{
+											"name": "add Admine",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/admin/add",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"admin",
+														"add"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/add",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																"add"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Admin",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/admin/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"admin",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "employee",
+									"item": [
+										{
+											"name": "{username}",
+											"item": [
+												{
+													"name": "get One Employee",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/employee/:username",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																"employee",
+																":username"
+															],
+															"variable": [
+																{
+																	"key": "username",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/admin/employee/:username",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"admin",
+																		"employee",
+																		":username"
+																	],
+																	"variable": [
+																		{
+																			"key": "username"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "get All Admins",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/admin/all",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"admin",
+														"all"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/all",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																"all"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"firstname\": \"<string>\",\n    \"lastname\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"salary\": \"<double>\",\n    \"role\": \"<string>\",\n    \"age\": \"<integer>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"firstname\": \"<string>\",\n    \"lastname\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"salary\": \"<double>\",\n    \"role\": \"<string>\",\n    \"age\": \"<integer>\"\n  }\n]"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "{id}",
+											"item": [
+												{
+													"name": "delete Employee",
+													"request": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/admin/delete/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"admin",
+																"delete",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/admin/delete/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"admin",
+																		"delete",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": \"<integer>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"role\": \"<string>\",\n  \"age\": \"<integer>\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "register",
+									"item": [
+										{
+											"name": "register",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"role\": \"CUSTOMER\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"register"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"role\": \"CUSTOMER\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/register",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"access_token\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "refresh-token",
+									"item": [
+										{
+											"name": "refresh Token",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/refresh-token",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"refresh-token"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/refresh-token",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"refresh-token"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "authenticate",
+									"item": [
+										{
+											"name": "authenticate",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/authenticate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"authenticate"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/authenticate",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"authenticate"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"access_token\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "users",
+							"item": [
+								{
+									"name": "change Password 1",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"currentPassword\": \"<string>\",\n  \"newPassword\": \"<string>\",\n  \"confirmationPassword\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"currentPassword\": \"<string>\",\n  \"newPassword\": \"<string>\",\n  \"confirmationPassword\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/users",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "search",
+							"item": [
+								{
+									"name": "reservations",
+									"item": [
+										{
+											"name": "search Reservations",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/search/reservations?customerName=<string>&customerId=<long>&date=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"search",
+														"reservations"
+													],
+													"query": [
+														{
+															"key": "customerName",
+															"value": "<string>"
+														},
+														{
+															"key": "customerId",
+															"value": "<long>"
+														},
+														{
+															"key": "date",
+															"value": "<dateTime>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/search/reservations?customerName=<string>&customerId=<long>&date=<dateTime>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"search",
+																"reservations"
+															],
+															"query": [
+																{
+																	"key": "customerName",
+																	"value": "<string>"
+																},
+																{
+																	"key": "customerId",
+																	"value": "<long>"
+																},
+																{
+																	"key": "date",
+																	"value": "<dateTime>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "customer",
+									"item": [
+										{
+											"name": "{id}",
+											"item": [
+												{
+													"name": "search Customer",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/search/customer/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"search",
+																"customer",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/search/customer/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"search",
+																		"customer",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "id"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"role\": \"USER\",\n  \"tokens\": [\n    {\n      \"id\": \"<integer>\",\n      \"token\": \"<string>\",\n      \"tokenType\": \"BEARER\",\n      \"revoked\": \"<boolean>\",\n      \"expired\": \"<boolean>\",\n      \"user\": {\n        \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n      }\n    },\n    {\n      \"id\": \"<integer>\",\n      \"token\": \"<string>\",\n      \"tokenType\": \"BEARER\",\n      \"revoked\": \"<boolean>\",\n      \"expired\": \"<boolean>\",\n      \"user\": {\n        \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n      }\n    }\n  ],\n  \"enabled\": \"<boolean>\",\n  \"username\": \"<string>\",\n  \"authorities\": [\n    {\n      \"authority\": \"<string>\"\n    },\n    {\n      \"authority\": \"<string>\"\n    }\n  ],\n  \"accountNonExpired\": \"<boolean>\",\n  \"credentialsNonExpired\": \"<boolean>\",\n  \"accountNonLocked\": \"<boolean>\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "available-rooms",
+									"item": [
+										{
+											"name": "search Available Rooms",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/search/available-rooms?startDate=<dateTime>&endDate=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"search",
+														"available-rooms"
+													],
+													"query": [
+														{
+															"key": "startDate",
+															"value": "<dateTime>",
+															"description": "(Required) "
+														},
+														{
+															"key": "endDate",
+															"value": "<dateTime>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/search/available-rooms?startDate=<dateTime>&endDate=<dateTime>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"search",
+																"available-rooms"
+															],
+															"query": [
+																{
+																	"key": "startDate",
+																	"value": "<dateTime>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "endDate",
+																	"value": "<dateTime>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"<string>\",\n    \"price\": \"<double>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"<string>\",\n    \"price\": \"<double>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  }\n]"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

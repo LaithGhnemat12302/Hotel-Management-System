@@ -22,17 +22,22 @@ public class ReservationController {
 
     @Autowired
     private ReservationService reservationService;
-//Reservation
-//    add reservation for a customer
-@PostMapping
-public ResponseEntity<?> reserveRoom(@RequestBody ReservationRequest reservationRequest) {
-    try {
-        Reservation newReservation = reservationService.reserveRoom(reservationRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(newReservation);
-    } catch (RuntimeException e) {
-        return ResponseEntity.badRequest().body(e.getMessage());
+
+    @PostMapping
+    public ResponseEntity<?> reserveRoom(@RequestBody ReservationRequest reservationRequest) {
+        try {
+            Reservation newReservation = reservationService.reserveRoom(reservationRequest);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newReservation);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
-}
+
+    @PutMapping("/cancel/{id}")
+    public ResponseEntity<Reservation> cancelReservation(@PathVariable Long id) {
+        Reservation reservation = reservationService.cancelReservation(id);
+        return ResponseEntity.ok(reservation);
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateReservation(@PathVariable Long id, @RequestBody Reservation updatedReservation) {
@@ -44,14 +49,10 @@ public ResponseEntity<?> reserveRoom(@RequestBody ReservationRequest reservation
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> cancelReservation(@PathVariable Long id) {
-        reservationService.cancelReservation(id);
-        return ResponseEntity.noContent().build();
-    }
+
 
     @DeleteMapping("/delete/{id}")
-    public void deleteReservation(@PathVariable Long id) {
+    public void deleteReservation_byID(@PathVariable Long id) {
         reservationService.deleteReservation(id);
     }
 

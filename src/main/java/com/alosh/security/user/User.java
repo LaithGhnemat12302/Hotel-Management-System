@@ -38,12 +38,16 @@ public class User implements UserDetails {
   @ToString.Exclude
   private List<Token> tokens;
 
+//  @Override
+//  public Collection<? extends GrantedAuthority> getAuthorities() {
+//    return role.getAuthorities() != null ? role.getAuthorities() : Collections.emptyList();
+//
+//  }
+
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return role.getAuthorities() != null ? role.getAuthorities() : Collections.emptyList();
-
+    return List.of(new SimpleGrantedAuthority(role.name()));
   }
-
   @Override
   public String getPassword() {
     return password;

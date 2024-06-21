@@ -2,6 +2,7 @@ package com.alosh.security.Controller;
 
 import com.alosh.security.Dto.AdminDTO;
 import com.alosh.security.Services.AdminService;
+import com.alosh.security.Services.ReservationService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
+    @Autowired
+    private ReservationService reservationService;
+
 
     @PostMapping("/add")
     public ResponseEntity<AdminDTO> addAdmine(@RequestBody AdminDTO adminDTO) {
@@ -57,5 +61,11 @@ public class AdminController {
     public ResponseEntity<AdminDTO> getOneEmployee(@PathVariable String username) {
         AdminDTO admin = adminService.getOneEmployee(username);
         return admin != null ? ResponseEntity.ok(admin) : ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("delete-reservation/{id}")
+    public ResponseEntity<Void> deleteReservation(@PathVariable Long id) {
+        reservationService.delete_Reservation(id);
+        return ResponseEntity.noContent().build();
     }
 }

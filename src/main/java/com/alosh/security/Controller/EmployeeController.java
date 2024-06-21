@@ -1,6 +1,7 @@
 package com.alosh.security.Controller;
 
 import com.alosh.security.Dto.EmployeeResponse;
+import com.alosh.security.Dto.SalaryDTO;
 import com.alosh.security.Dto.UpdateEmployeeRequest;
 import com.alosh.security.Entity.Employee;
 import com.alosh.security.Errors.EmployeeNotFoundException;
@@ -26,6 +27,15 @@ public class EmployeeController {
         Employee newEmployee = employeeService.addEmployee(employee);
         return ResponseEntity.status(HttpStatus.CREATED).body(newEmployee);
     }
+
+
+    @PutMapping("/salary")
+    public ResponseEntity<Employee> updateSalary(@RequestBody SalaryDTO salaryDTO) {
+        Employee employee = employeeService.updateSalary(salaryDTO);
+        return ResponseEntity.ok(employee);
+    }
+
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails) {

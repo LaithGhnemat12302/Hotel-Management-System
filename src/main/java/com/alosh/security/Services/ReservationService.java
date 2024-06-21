@@ -33,6 +33,19 @@ public class ReservationService {
 
     private static final Logger logger = LoggerFactory.getLogger(ReservationService.class);
 
+
+
+    public Reservation cancelReservation(Long id) {
+        Optional<Reservation> optionalReservation = reservationRepository.findById(id);
+        if (optionalReservation.isPresent()) {
+            Reservation reservation = optionalReservation.get();
+            reservation.setStatus("CANCELED");
+            return reservationRepository.save(reservation);
+        } else {
+            throw new RuntimeException("Reservation not found");
+        }
+    }
+
     @Transactional
     public Reservation reserveRoom(ReservationRequest reservationRequest) {
         logger.info("Starting room reservation for customer ID: {} and room ID: {}",
@@ -88,7 +101,7 @@ public class ReservationService {
     }
 
     @Transactional
-    public void cancelReservation(Long id) {
+    public void delete_Reservation(Long id) {
         Reservation reservation = reservationRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Reservation not found with ID: " + id));
 

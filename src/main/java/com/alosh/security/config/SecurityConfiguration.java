@@ -46,7 +46,7 @@ public class SecurityConfiguration {
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
     private final LogoutHandler logoutHandler;
-
+//
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
@@ -54,13 +54,14 @@ public class SecurityConfiguration {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
-                        .requestMatchers(POST, "/api/v1/reservations/").hasAnyRole(CUSTOMER.name(), ADMIN.name())
+                        .requestMatchers(POST, "/api/v1/reservations/").hasAnyAuthority(CUSTOMER.name(), ADMIN.name())
 //                        .requestMatchers("/api/v1/reservations/**")
 //                        .hasRole(ADMIN.name())
-                        .requestMatchers("api/v1/admin/**").hasRole(ADMIN.name())
-                        .requestMatchers("/api/v1/employees/**").hasRole(ADMIN.name())
-                        .requestMatchers("/api/v1/search/**").hasRole(ADMIN.name())
-                        .requestMatchers("/api/v1/search/available-rooms").hasRole(CUSTOMER.name())
+                        .requestMatchers("api/v1/admin/**").hasAnyAuthority(ADMIN.name())
+                        .requestMatchers("/api/v1/employees/**").hasAnyAuthority(ADMIN.name())
+                        .requestMatchers("/api/v1/search/**").hasAnyAuthority(ADMIN.name())
+                        .requestMatchers("/api/v1/search/available-rooms").hasAnyAuthority(CUSTOMER.name())
+                        .requestMatchers("/api/v1/employees/**").hasAnyAuthority(ADMIN.name())
 
                      //   .requestMatchers("/api/v1/customers").hasAuthority(ADMIN.name())
                         .anyRequest().authenticated())

@@ -85,4 +85,7 @@ public class RoomService {
     public List<Room> findAvailableRoomsByDateRange(Date startDate, Date endDate) {
         return roomRepository.findAvailableRoomsByDateRange(startDate, endDate);
     }
+    public List<Room> getAllNotReservedRooms() {
+        return roomRepository.findAllNotReserved();
+    }
 }

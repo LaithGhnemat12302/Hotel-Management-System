@@ -56,4 +56,10 @@ public class RoomController {
         List<Room> availableRooms = roomService.findAvailableRoomsByDateRange(startDate, endDate);
         return ResponseEntity.ok(availableRooms);
     }
+
+    @GetMapping("/not-reserved")
+    public ResponseEntity<List<Room>> getAllNotReservedRooms() {
+        List<Room> rooms = roomService.getAllNotReservedRooms();
+        return ResponseEntity.ok(rooms);
+    }
 }

@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.alosh</groupId>
-	<artifactId>security</artifactId>
+	<artifactId>docker-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>security</name>
 	<description>Demo project for Spring Boot</description>
